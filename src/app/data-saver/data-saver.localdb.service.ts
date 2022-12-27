@@ -26,9 +26,10 @@ export class LocalDBSaver implements iTodoDataSaver {
   }
 
   getAllTodos() {
-    return JSON.parse(
-      localStorage.getItem(this.localDBKey) || ''
+    const localData = JSON.parse(
+      localStorage.getItem(this.localDBKey) || '[]'
     ) as TodoType[];
+    return localData;
   }
 
   updateTodoState(id: number, toState: TodoState) {

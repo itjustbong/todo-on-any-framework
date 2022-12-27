@@ -9,11 +9,3 @@ export interface TodoType {
   todo: string;
   state: string;
 }
-
-// export class Todos {
-//   private todos: Todo[];
-
-//   addTodo(todo: ){
-//     this.todos =
-//   }
-// }

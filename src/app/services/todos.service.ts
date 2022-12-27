@@ -7,6 +7,11 @@ import { TodoState } from '../models/todos';
 })
 export class TodosService {
   constructor(private dataSaver: LocalDBSaver) {}
+
+  getAlltodos() {
+    return this.dataSaver.getAllTodos();
+  }
+
   add(todo: string) {
     const todoObj = this.dataSaver.todoObjBuilder(todo);
     const prevTodos = this.dataSaver.getAllTodos() || [];
@@ -23,5 +28,4 @@ export class TodosService {
   updateState(id: number, state: TodoState) {
     this.dataSaver.updateTodoState(id, state);
   }
-  clearAll() {}
 }
