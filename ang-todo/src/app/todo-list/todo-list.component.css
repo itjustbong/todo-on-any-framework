@@ -59,3 +59,7 @@ button {
   color: white;
   font-weight: bold;
 }
+
+li {
+  height: 2.5rem;
+}

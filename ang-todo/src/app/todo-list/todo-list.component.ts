@@ -17,4 +17,8 @@ export class TodoListComponent {
     this.db.add(this.newTodo.value);
     this.newTodo.setValue('');
   }
+
+  delTodo(id: number) {
+    this.db.delete(id);
+  }
 }
