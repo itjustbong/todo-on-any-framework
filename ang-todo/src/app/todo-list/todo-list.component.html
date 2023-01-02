@@ -1,0 +1,17 @@
+<div class="todo-list">
+  <!-- https://angular.kr/guide/reactive-forms -->
+  <!-- https://angular.io/guide/forms-overview -->
+  <form>
+    <div class="user-box">
+      <input type="text" name="" required="" [formControl]="newTodo" />
+      <label>todo 적으셈!</label>
+      <button type="button" (click)="addTodo()">추가</button>
+    </div>
+  </form>
+
+  <ul>
+    <li *ngFor="let item of db.getAlltodos()">
+      {{ item.todo }}
+    </li>
+  </ul>
+</div>

@@ -18,10 +18,13 @@ export class TodosService {
 
     if (prevTodos.length === 0) {
       this.dataSaver.save(new Array(todoObj));
+      console.log(this.getAlltodos());
     } else {
       this.dataSaver.save(prevTodos.concat(todoObj));
+      console.log(this.getAlltodos());
     }
   }
+
   delete(id: number) {
     this.dataSaver.delete(id);
   }

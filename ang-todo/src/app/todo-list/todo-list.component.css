@@ -1,0 +1,61 @@
+.todo-list {
+  background-color: var(--list-bg-color);
+  position: absolute;
+  top: 8rem;
+  max-width: 620px;
+  min-width: 300px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  border-radius: 1rem;
+  height: 100%;
+}
+
+form {
+  width: 80%;
+  margin: 1rem auto;
+  position: relative;
+}
+
+input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: black;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid gray;
+  outline: none;
+  background: transparent;
+}
+
+label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: black;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: var(--main-color);
+  font-size: 12px;
+}
+
+button {
+  position: absolute;
+  right: 0.1rem;
+  height: 38px;
+  width: 5rem;
+  border: none;
+  background-color: var(--main-color);
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: bold;
+}
