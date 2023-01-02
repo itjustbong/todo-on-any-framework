@@ -11,7 +11,7 @@
   </form>
 
   <ul>
-    <li *ngFor="let item of db.getAlltodos()">
+    <li *ngFor="let item of db.allTodos">
       {{ item.todo }}
       <button class="del-button" (click)="delTodo(item.id)">삭제</button>
     </li>

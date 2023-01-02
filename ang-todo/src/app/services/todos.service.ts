@@ -8,20 +8,20 @@ import { TodoState } from '../models/todos';
 export class TodosService {
   constructor(private dataSaver: LocalDBSaver) {}
 
-  getAlltodos() {
-    return this.dataSaver.getAllTodos();
+  get allTodos() {
+    return this.dataSaver.allTodos;
   }
 
   add(todo: string) {
     const todoObj = this.dataSaver.todoObjBuilder(todo);
-    const prevTodos = this.dataSaver.getAllTodos() || [];
+    const prevTodos = this.dataSaver.allTodos || [];
 
     if (prevTodos.length === 0) {
       this.dataSaver.save(new Array(todoObj));
-      console.log(this.getAlltodos());
+      console.log(this.allTodos);
     } else {
       this.dataSaver.save(prevTodos.concat(todoObj));
-      console.log(this.getAlltodos());
+      console.log(this.allTodos);
     }
   }
 

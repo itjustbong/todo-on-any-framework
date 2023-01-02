@@ -25,7 +25,7 @@ export class LocalDBSaver implements iTodoDataSaver {
     }
   }
 
-  getAllTodos() {
+  get allTodos() {
     const localData = JSON.parse(
       localStorage.getItem(this.localDBKey) || '[]'
     ) as TodoType[];
@@ -33,13 +33,13 @@ export class LocalDBSaver implements iTodoDataSaver {
   }
 
   updateTodoState(id: number, toState: TodoState) {
-    const allTodos = this.getAllTodos();
+    const allTodos = this.allTodos;
     const todoIdx = allTodos.findIndex((todo) => todo.id === id);
     allTodos[todoIdx].state = toState;
   }
 
   delete(id: number) {
-    const allTodos = this.getAllTodos();
+    const allTodos = this.allTodos;
     const filteredTodos = allTodos.filter((todo) => todo.id !== id);
     this.save(filteredTodos);
   }
