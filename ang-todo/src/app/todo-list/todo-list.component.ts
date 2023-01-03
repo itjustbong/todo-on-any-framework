@@ -13,7 +13,8 @@ export class TodoListComponent {
   db = new TodosService(new LocalDBSaver());
   newTodo = new FormControl('');
 
-  addTodo() {
+  addTodo(e: any) {
+    e.preventDefault();
     if (!this.newTodo.value) return;
     this.db.add(this.newTodo.value);
     this.newTodo.setValue('');
