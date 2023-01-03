@@ -6,14 +6,26 @@
     <div class="user-box">
       <input type="text" name="" required="" [formControl]="newTodo" />
       <label>todo 적으셈!</label>
-      <button type="button" (click)="addTodo()">추가</button>
+      <button class="todo-add-btn" type="button" (click)="addTodo()">
+        추가
+      </button>
     </div>
   </form>
 
-  <ul>
-    <li *ngFor="let item of db.allTodos">
-      {{ item.todo }}
-      <button class="del-button" (click)="delTodo(item.id)">삭제</button>
-    </li>
-  </ul>
+  <div class="todo-list-box-container">
+    <ul>
+      <li *ngFor="let item of db.allTodos">
+        <div>{{ item.todo }}</div>
+        <div class="todo-box-right">
+          <div *ngIf="item.state === 'Done'; then done; else none"></div>
+          <ng-template #done>완료</ng-template>
+          <ng-template #none>미완료</ng-template>
+
+          <button class="todo-del-button" (click)="delTodo(item.id)">
+            삭제
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>

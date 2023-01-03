@@ -12,9 +12,9 @@
 }
 
 form {
-  width: 80%;
   margin: 1rem auto;
   position: relative;
+  width: 80%;
 }
 
 input {
@@ -34,8 +34,9 @@ label {
   top: 0;
   left: 0;
   padding: 10px 0;
-  font-size: 16px;
-  color: black;
+  font-size: 0.75rem;
+  color: grey;
+  font-weight: bold;
   pointer-events: none;
   transition: 0.5s;
 }
@@ -48,7 +49,7 @@ input:valid ~ label {
   font-size: 12px;
 }
 
-button {
+.todo-add-btn {
   position: absolute;
   right: 0.1rem;
   height: 38px;
@@ -60,6 +61,32 @@ button {
   font-weight: bold;
 }
 
+.todo-del-button {
+  border: none;
+  color: var(--main-color);
+  border-radius: 0.5rem;
+  background-color: white;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.todo-list-box-container {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+}
+
 li {
   height: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-box-right {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: row;
+  font-size: 0.875rem;
 }
