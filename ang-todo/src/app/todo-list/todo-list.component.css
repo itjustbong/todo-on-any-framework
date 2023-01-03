@@ -51,12 +51,11 @@ input:valid ~ label {
 
 .todo-add-btn {
   position: absolute;
-  right: 0.1rem;
-  height: 38px;
-  width: 5rem;
+  right: 0.25rem;
+  height: 2rem;
   border: none;
-  background-color: var(--main-color);
   border-radius: 0.5rem;
+  background-color: var(--main-color);
   color: white;
   font-weight: bold;
 }
