@@ -18,11 +18,15 @@
         <div (click)="updateState(item.id, item.state)">{{ item.todo }}</div>
         <div class="todo-box-right">
           <div *ngIf="item.state === 'Done'; then done; else none"></div>
-          <ng-template #done> 완료 </ng-template>
-          <ng-template #none> 미완료 </ng-template>
+          <ng-template #done>
+            <span class="material-icons done"> done </span>
+          </ng-template>
+          <ng-template #none>
+            <span class="material-icons none"> panorama_fish_eye </span>
+          </ng-template>
 
           <button class="todo-del-button" (click)="delTodo(item.id)">
-            삭제
+            <span class="material-icons clear-todo"> clear </span>
           </button>
         </div>
       </li>

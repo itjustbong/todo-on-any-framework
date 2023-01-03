@@ -90,3 +90,13 @@ li {
   flex-direction: row;
   font-size: 0.875rem;
 }
+
+.done {
+  color: var(--main-color);
+}
+.none {
+  color: gray;
+}
+.clear-todo {
+  color: tomato;
+}

@@ -24,7 +24,6 @@ export class TodoListComponent {
   }
 
   updateState(id: number, nowState: string) {
-    console.log(id, nowState);
     if (nowState === TodoState.NORMAL) this.db.updateState(id, TodoState.DONE);
     else this.db.updateState(id, TodoState.NORMAL);
   }
