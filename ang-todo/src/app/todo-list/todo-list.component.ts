@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { LocalDBSaver } from '../data-saver/data-saver.localdb.service';
+import { LocalDBSaver } from '../data-saver/data-saver.localdb';
 import { TodosService } from '../services/todos.service';
 
 @Component({

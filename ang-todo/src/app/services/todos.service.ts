@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LocalDBSaver } from '../data-saver/data-saver.localdb.service';
+import { LocalDBSaver } from '../data-saver/data-saver.localdb';
 import { TodoState } from '../models/todos';
 
 @Injectable({
@@ -13,16 +13,7 @@ export class TodosService {
   }
 
   add(todo: string) {
-    const todoObj = this.dataSaver.todoObjBuilder(todo);
-    const prevTodos = this.dataSaver.allTodos || [];
-
-    if (prevTodos.length === 0) {
-      this.dataSaver.save(new Array(todoObj));
-      console.log(this.allTodos);
-    } else {
-      this.dataSaver.save(prevTodos.concat(todoObj));
-      console.log(this.allTodos);
-    }
+    this.dataSaver.add(todo);
   }
 
   delete(id: number) {

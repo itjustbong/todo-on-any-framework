@@ -17,12 +17,24 @@ export class LocalDBSaver implements iTodoDataSaver {
     };
   }
 
-  save(data: TodoType[]) {
+  localDBSaver(todosObjData: TodoType[]) {
     try {
-      localStorage.setItem(this.localDBKey, JSON.stringify(data));
+      localStorage.setItem(this.localDBKey, JSON.stringify(todosObjData));
     } catch (e) {
       console.log('LocalDBSaver save 에러');
     }
+  }
+
+  add(todo: string) {
+    const todoObj = this.todoObjBuilder(todo);
+    const prevTodos = this.allTodos || [];
+    let todoObjData;
+    if (prevTodos.length === 0) {
+      todoObjData = new Array(todoObj);
+    } else {
+      todoObjData = prevTodos.concat(todoObj);
+    }
+    this.localDBSaver(todoObjData);
   }
 
   get allTodos() {
@@ -41,6 +53,6 @@ export class LocalDBSaver implements iTodoDataSaver {
   delete(id: number) {
     const allTodos = this.allTodos;
     const filteredTodos = allTodos.filter((todo) => todo.id !== id);
-    this.save(filteredTodos);
+    this.localDBSaver(filteredTodos);
   }
 }
