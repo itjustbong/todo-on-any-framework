@@ -48,6 +48,7 @@ export class LocalDBSaver implements iTodoDataSaver {
     const allTodos = this.allTodos;
     const todoIdx = allTodos.findIndex((todo) => todo.id === id);
     allTodos[todoIdx].state = toState;
+    this.localDBSaver(allTodos);
   }
 
   delete(id: number) {

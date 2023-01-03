@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { LocalDBSaver } from '../data-saver/data-saver.localdb';
+import { TodoState } from '../models/todos';
 import { TodosService } from '../services/todos.service';
 
 @Component({
@@ -20,5 +21,11 @@ export class TodoListComponent {
 
   delTodo(id: number) {
     this.db.delete(id);
+  }
+
+  updateState(id: number, nowState: string) {
+    console.log(id, nowState);
+    if (nowState === TodoState.NORMAL) this.db.updateState(id, TodoState.DONE);
+    else this.db.updateState(id, TodoState.NORMAL);
   }
 }

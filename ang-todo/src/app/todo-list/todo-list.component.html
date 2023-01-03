@@ -15,11 +15,11 @@
   <div class="todo-list-box-container">
     <ul>
       <li *ngFor="let item of db.allTodos">
-        <div>{{ item.todo }}</div>
+        <div (click)="updateState(item.id, item.state)">{{ item.todo }}</div>
         <div class="todo-box-right">
           <div *ngIf="item.state === 'Done'; then done; else none"></div>
-          <ng-template #done>완료</ng-template>
-          <ng-template #none>미완료</ng-template>
+          <ng-template #done> 완료 </ng-template>
+          <ng-template #none> 미완료 </ng-template>
 
           <button class="todo-del-button" (click)="delTodo(item.id)">
             삭제
