@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { TodoState, TodoType } from '../models/todos';
-import { iTodoDataSaver } from './data-saver.interface';
+import { DBSaver } from './data-saver';
 
 @Injectable({
   providedIn: 'root',
 })
-export class LocalDBSaver implements iTodoDataSaver {
+export class LocalDBSaver implements DBSaver {
   private localDBKey = 'todoData';
   constructor() {}
 
@@ -25,6 +25,13 @@ export class LocalDBSaver implements iTodoDataSaver {
     }
   }
 
+  get allTodos() {
+    const localData = JSON.parse(
+      localStorage.getItem(this.localDBKey) || '[]'
+    ) as TodoType[];
+    return localData;
+  }
+
   add(todo: string) {
     const todoObj = this.todoObjBuilder(todo);
     const prevTodos = this.allTodos || [];
@@ -35,13 +42,6 @@ export class LocalDBSaver implements iTodoDataSaver {
       todoObjData = prevTodos.concat(todoObj);
     }
     this.localDBSaver(todoObjData);
-  }
-
-  get allTodos() {
-    const localData = JSON.parse(
-      localStorage.getItem(this.localDBKey) || '[]'
-    ) as TodoType[];
-    return localData;
   }
 
   updateTodoState(id: number, toState: TodoState) {

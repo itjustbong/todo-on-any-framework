@@ -4,6 +4,7 @@
   --text-color: white;
   --list-bg-color: white;
 }
+
 body {
   max-width: 640px;
   min-width: 320px;

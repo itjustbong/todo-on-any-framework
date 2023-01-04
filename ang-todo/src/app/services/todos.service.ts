@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { LocalDBSaver } from '../data-saver/data-saver.localdb';
+import { DBSaver } from '../data-saver/data-saver';
 import { TodoState } from '../models/todos';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TodosService {
-  constructor(private dataSaver: LocalDBSaver) {}
+  constructor(private dataSaver: DBSaver) {}
 
   get allTodos() {
     return this.dataSaver.allTodos;
