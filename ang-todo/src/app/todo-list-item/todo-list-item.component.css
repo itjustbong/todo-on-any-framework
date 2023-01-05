@@ -1,0 +1,39 @@
+.todo-del-button {
+    border: none;
+    color: var(--main-color);
+    border-radius: 0.5rem;
+    background-color: white;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.todo-list-box-container {
+    position: relative;
+    margin: 0 auto;
+    width: 80%;
+}
+
+li {
+    height: 2.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-box-right {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: row;
+    font-size: 0.875rem;
+}
+
+.done {
+    color: var(--main-color);
+}
+.none {
+    color: gray;
+}
+.clear-todo {
+    color: tomato;
+}
