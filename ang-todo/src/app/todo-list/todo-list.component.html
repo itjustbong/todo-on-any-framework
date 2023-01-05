@@ -1,51 +1,9 @@
-<!-- 컴포넌트 좀 나눠야 함! -->
 <div class="todo-list">
-  <!-- https://angular.kr/guide/reactive-forms -->
-  <!-- https://angular.io/guide/forms-overview -->
-  <form>
-    <div class="user-box">
-      <input
-        type="text"
-        name=""
-        required="true"
-        [formControl]="newTodo"
-        (keydown.enter)="addTodo($event)"
-      />
-      <label>todo 적으셈!</label>
-      <button class="todo-add-btn" type="button" (click)="addTodo($event)">
-        <span class="material-icons"> maps_ugc </span>
-      </button>
-    </div>
-  </form>
+  <app-todo-form></app-todo-form>
 
   <div class="todo-list-box-container">
     <ul>
-      <li *ngFor="let item of db.allTodos">
-        <div (click)="updateState(item.id, item.state)">{{ item.todo }}</div>
-        <div class="todo-box-right">
-          <div *ngIf="item.state === 'Done'; then done; else none"></div>
-          <ng-template #done>
-            <span
-              class="material-icons done"
-              (click)="updateState(item.id, item.state)"
-            >
-              done
-            </span>
-          </ng-template>
-          <ng-template #none>
-            <span
-              class="material-icons none"
-              (click)="updateState(item.id, item.state)"
-            >
-              panorama_fish_eye
-            </span>
-          </ng-template>
-
-          <button class="todo-del-button" (click)="delTodo(item.id)">
-            <span class="material-icons clear-todo"> clear </span>
-          </button>
-        </div>
-      </li>
+      <app-todo-list-item></app-todo-list-item>
     </ul>
   </div>
 </div>

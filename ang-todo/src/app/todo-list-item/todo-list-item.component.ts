@@ -5,11 +5,11 @@ import { TodoState } from '../models/todos';
 import { TodosService } from '../services/todos.service';
 
 @Component({
-  selector: 'app-todo-list',
-  templateUrl: './todo-list.component.html',
-  styleUrls: ['./todo-list.component.css'],
+  selector: 'app-todo-list-item',
+  templateUrl: './todo-list-item.component.html',
+  styleUrls: ['./todo-list-item.component.css']
 })
-export class TodoListComponent {
+export class TodoListItemComponent {
   db = new TodosService(new LocalDBSaver());
   newTodo = new FormControl('');
 
