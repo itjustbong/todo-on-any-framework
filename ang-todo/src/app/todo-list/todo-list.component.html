@@ -1,22 +1,5 @@
-<!-- 컴포넌트 좀 나눠야 함! -->
 <div class="todo-list">
-  <!-- https://angular.kr/guide/reactive-forms -->
-  <!-- https://angular.io/guide/forms-overview -->
-  <form>
-    <div class="user-box">
-      <input
-        type="text"
-        name=""
-        required="true"
-        [formControl]="newTodo"
-        (keydown.enter)="addTodo($event)"
-      />
-      <label>todo 적으셈!</label>
-      <button class="todo-add-btn" type="button" (click)="addTodo($event)">
-        <span class="material-icons"> maps_ugc </span>
-      </button>
-    </div>
-  </form>
+  <app-todo-form></app-todo-form>
 
   <div class="todo-list-box-container">
     <ul>
