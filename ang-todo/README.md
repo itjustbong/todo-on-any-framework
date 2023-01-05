@@ -1,4 +1,5 @@
 # 앵귤러를 활용한 투두앱
+[해당 프로젝트 관련 글](https://velog.io/@qhdgkdbs/ang-todo)
 
 ## 작동 모습
 
