@@ -1,5 +1,7 @@
 # 프레임워크 없는 프론트엔드 개발 - NFF
 
+<img src="https://img.shields.io/badge/NO FRAMEWORK FE-색상?style=flat&logoColor=white"> <img src="https://img.shields.io/badge/Angular-DD0031?style=flat&logo=Angular&logoColor=white"> <img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=React&logoColor=white"> <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=flat&logo=Vue.js&logoColor=white"> <img src="https://img.shields.io/badge/Svelte-FF3E00?style=flat&logo=Svelte&logoColor=white"> <img src="https://img.shields.io/badge/Solid-2C4F7C?style=flat&logo=Solid&logoColor=white">
+
 ## 프로젝트 동기
 
 - 프론트엔드를 공부하는 것인지, 웹 프레임워크(리액트, 뷰 등)을 공부하는 것인지 모르겠음
@@ -69,4 +71,4 @@
 
 - 1주차
 
-[![Velog's GitHub stats](https://velog-readme-stats.vercel.app/api?name=qhdgkdbs)](https://velog.io/@qhdgkdbs)
+[![Velog's GitHub stats](https://velog-readme-stats.vercel.app/api?name=qhdgkdbs&slug=ang-todo)](https://velog.io/@qhdgkdbs/ang-todo)
