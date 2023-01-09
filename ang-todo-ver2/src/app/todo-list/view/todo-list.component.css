@@ -1,0 +1,101 @@
+.todo-list {
+  background-color: var(--list-bg-color);
+  position: absolute;
+  top: 8rem;
+  max-width: 620px;
+  min-width: 300px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  border-radius: 1rem;
+  height: 100%;
+}
+
+form {
+  margin: 1rem auto;
+  position: relative;
+  width: 80%;
+}
+
+input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: black;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid gray;
+  outline: none;
+  background: transparent;
+}
+
+label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 0.75rem;
+  color: grey;
+  font-weight: bold;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: var(--main-color);
+  font-size: 12px;
+}
+
+.todo-add-btn {
+  position: absolute;
+  right: 0.25rem;
+  height: 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+}
+
+.todo-del-button {
+  border: none;
+  color: var(--main-color);
+  border-radius: 0.5rem;
+  background-color: white;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.todo-list-box-container {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+}
+
+li {
+  height: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-box-right {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: row;
+  font-size: 0.875rem;
+}
+
+.done {
+  color: var(--main-color);
+}
+.none {
+  color: gray;
+}
+.clear-todo {
+  color: tomato;
+}

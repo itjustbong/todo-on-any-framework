@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --main-color: #10b981;
+  --text-color: white;
+  --list-bg-color: white;
+}
+
+body {
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+  background-color: var(--main-color);
+}
+
+a:link {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: #10b981;
+  color: inherit;
+}
+
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.material-icons {
+  cursor: pointer;
+}

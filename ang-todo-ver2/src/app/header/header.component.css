@@ -1,0 +1,6 @@
+.header {
+  color: var(--text-color);
+  text-align: center;
+  border-radius: 1rem;
+  overflow: hidden;
+}
