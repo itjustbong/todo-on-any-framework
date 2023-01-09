@@ -34,6 +34,7 @@ export class Todo {
     return this._state;
   }
 
+  // 생성자와 generate 나눈 이유
   static generate(id: number, content: string): Todo {
     return new Todo({
       id,

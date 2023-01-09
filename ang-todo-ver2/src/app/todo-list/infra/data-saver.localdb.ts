@@ -25,6 +25,8 @@ export class LocalTodoDataSaver implements TodoDataSaver {
     );
   }
 
+  // 새로운 Todo 객체 전체를 넘겨 줌.
+  // 그러면 굳이 state, 내용이 변경하는 것을 위한 별도의 메소드가 필요없을듯!
   update(id: number, todo: Todo): void {
     const allTodos = this.findAllTodos();
     const todoIdx = allTodos.findIndex((todo) => todo.id === id);
