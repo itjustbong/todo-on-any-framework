@@ -1,0 +1,11 @@
+{
+  "name": "react-todo",
+  "version": "1.0.0",
+  "description": "CRA 없는 리액트를 통해 todo 앱을 구현합니다",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
