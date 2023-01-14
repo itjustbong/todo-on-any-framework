@@ -5,17 +5,8 @@ import { DBSaver } from './data-saver';
 @Injectable({
   providedIn: 'root',
 })
-export class LocalDBSaver implements DBSaver {
+export class LocalDBSaver extends DBSaver {
   private localDBKey = 'todoData';
-  constructor() {}
-
-  todoObjBuilder(todo: string) {
-    return {
-      todo: todo,
-      state: TodoState.NORMAL,
-      id: Date.now(),
-    };
-  }
 
   localDBSaver(todosObjData: TodoType[]) {
     try {
