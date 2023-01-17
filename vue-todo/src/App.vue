@@ -1,85 +1,99 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+<style>
+body {
+  margin: 0;
+}
+
+#app {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 50px;
+  text-align: center;
+  background-color: #242424;
+}
+</style>
+
+<script lang="ts">
+import JSConfetti from "js-confetti";
+import MainWrapper from "./component/MainWrapper.vue";
+import Header from "./component/Header.vue";
+import { getData, saveData } from "./utils/storage";
+import type { TodoItemType } from "./component/TodoItem.vue";
+
+const TODO_STORAGE_KEY = "todo";
+
+export default {
+  components: {
+    Header: Header,
+    MainWrapper: MainWrapper,
+  },
+
+  data() {
+    return {
+      todoList: [] as TodoItemType[],
+    };
+  },
+
+  created() {
+    const storageData = getData(TODO_STORAGE_KEY);
+    this.todoList = storageData;
+  },
+
+  methods: {
+    addTodoItem(todo: string) {
+      if (todo) {
+        const newTodoData = {
+          id: this.todoList[this.todoList.length - 1]?.id + 1 || 1, // 마지막 요소의 id값 + 1
+          completed: false,
+          todo,
+        };
+        this.todoList.push(newTodoData);
+
+        // LocalStorage 업데이트
+        saveData(this.todoList, TODO_STORAGE_KEY);
+      }
+    },
+    toggleTodoItem(targetId: number) {
+      this.todoList.forEach((todoItem) => {
+        if (todoItem.id === targetId) {
+          todoItem.completed = !todoItem.completed; // toggle
+
+          // animation
+          if (todoItem.completed) {
+            jsConfetti.addConfetti({
+              emojis: ["🌈", "⚡️", "💥", "✨", "💫", "🌸"],
+            });
+          }
+        }
+      });
+
+      // LocalStorage 업데이트
+      saveData(this.todoList, TODO_STORAGE_KEY);
+    },
+    removeTodoItem(targetId: number) {
+      this.todoList = this.todoList.filter(
+        (todoItem) => todoItem.id !== targetId
+      );
+
+      // LocalStorage 업데이트
+      saveData(this.todoList, TODO_STORAGE_KEY);
+    },
+    resetTodoList() {
+      this.todoList = [];
+
+      // LocalStorage 업데이트
+      saveData(this.todoList, TODO_STORAGE_KEY);
+    },
+  },
+};
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <Header />
+  <MainWrapper
+    :todoList="todoList"
+    @addTodoItem="addTodoItem"
+    @toggleTodoItem="toggleTodoItem"
+    @removeTodoItem="removeTodoItem"
+    @resetTodoList="resetTodoList"
+  />
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
