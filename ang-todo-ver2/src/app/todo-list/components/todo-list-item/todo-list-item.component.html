@@ -1,0 +1,26 @@
+<li>
+  <div (click)="updateState(todo.id)">{{ todo.content }}</div>
+  <div class="todo-box-right">
+    <div *ngIf="todo.state === 'Done'; then done; else none"></div>
+    <ng-template #done>
+      <span
+        class="material-icons done"
+        (click)="updateState(todo.id)"
+      >
+        done
+      </span>
+    </ng-template>
+    <ng-template #none>
+      <span
+        class="material-icons none"
+        (click)="updateState(todo.id)"
+      >
+        panorama_fish_eye
+      </span>
+    </ng-template>
+
+    <button class="todo-del-button" (click)="deleteTodo(todo.id)">
+      <span class="material-icons clear-todo"> clear </span>
+    </button>
+  </div>
+</li>

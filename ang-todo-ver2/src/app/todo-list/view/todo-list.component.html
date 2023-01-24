@@ -20,26 +20,12 @@
 
   <div class="todo-list-box-container">
     <ul>
-      <li *ngFor="let item of getTodoList()">
-        <div (click)="switchState(item.id)">{{ item.content }}</div>
-        <div class="todo-box-right">
-          <div *ngIf="item.isDone(); then done; else none"></div>
-          <ng-template #done>
-            <span class="material-icons done" (click)="switchState(item.id)">
-              done
-            </span>
-          </ng-template>
-          <ng-template #none>
-            <span class="material-icons none" (click)="switchState(item.id)">
-              panorama_fish_eye
-            </span>
-          </ng-template>
-
-          <button class="todo-del-button" (click)="delTodo(item.id)">
-            <span class="material-icons clear-todo"> clear </span>
-          </button>
-        </div>
-      </li>
+      <todo-list-item
+        *ngFor="let item of getTodoList()"
+        [todo]="item"
+        (deleteEvent)="delTodo($event)"
+        (updateStateEvent)="switchState($event)"
+      ></todo-list-item>
     </ul>
   </div>
 </div>
