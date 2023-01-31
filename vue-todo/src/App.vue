@@ -13,7 +13,6 @@ body {
 </style>
 
 <script lang="ts">
-import JSConfetti from "js-confetti";
 import MainWrapper from "./component/MainWrapper.vue";
 import Header from "./component/Header.vue";
 import { getData, saveData } from "./utils/storage";
@@ -58,11 +57,11 @@ export default {
           todoItem.completed = !todoItem.completed; // toggle
 
           // animation
-          if (todoItem.completed) {
-            jsConfetti.addConfetti({
-              emojis: ["🌈", "⚡️", "💥", "✨", "💫", "🌸"],
-            });
-          }
+          // if (todoItem.completed) {
+          //   jsConfetti.addConfetti({
+          //     emojis: ["🌈", "⚡️", "💥", "✨", "💫", "🌸"],
+          //   });
+          // }
         }
       });
 
