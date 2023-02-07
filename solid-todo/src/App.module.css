@@ -1,33 +1,70 @@
-.App {
-  text-align: center;
-}
-
-.logo {
-  animation: logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  height: 100%;
 }
 
-.link {
-  color: #b318f0;
+.circle {
+  width: 260px;
+  height: 260px;
+  border-radius: 130px;
+  background-color: #9dc8ea;
+  filter: blur(100px);
+  position: absolute;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.circle1 {
+  top: 273px;
+  left: calc(50vw + 70px);
+}
+
+.circle2 {
+  top: 558px;
+  right: calc(50vw + 40px);
+}
+
+.titleArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 232px;
+  margin-top: 60px;
+  margin-bottom: 54px;
+}
+
+.titleText {
+  font-size: 72px;
+  font-weight: 200;
+  color: #7e7e7e;
+  z-index: -1;
+  letter-spacing: 0.32em;
+}
+
+.titleImage {
+  width: 217px;
+  height: 207px;
+  position: absolute;
+  z-index: 0;
+  opacity: 0.8;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.titlePrimaryText {
+  color: #000000;
+  z-index: 1;
+}
+
+.input {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 410px;
+  padding: 0 10px;
 }
