@@ -1,8 +1,7 @@
 
 <script lang="ts">
 	import { todoData } from "../store";
-
-
+	
   let todoText=""
 
   const handleAddTodo = () => {

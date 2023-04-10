@@ -69,6 +69,6 @@
 
 ### 🌱 결과물
 
-- 1주차
-
-[![Velog's GitHub stats](https://velog-readme-stats.vercel.app/api?name=qhdgkdbs&slug=ang-todo)](https://velog.io/@qhdgkdbs/ang-todo)
+[스택별 후기 - itjugbong.me](https://www.itjustbong.me/framework-frontend) <br />
+[프레임워크 없는 프론트엔드 스터디 - GDSC 레포](https://github.com/gdsc-ssu/2023-FE-with-no-framework) <br />
+[패키지매니저, 모노레포 정리 레포](https://github.com/itjustbong/fe-package-mono) <br />

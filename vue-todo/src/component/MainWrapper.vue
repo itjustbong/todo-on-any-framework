@@ -23,6 +23,7 @@ export default {
   },
   // todoList 라고 하는 props를 받아온다.
   props: ["todoList"],
+  emits: ["addTodoItem", "toggleTodoItem", "removeTodoItem", "resetTodoList"],
   methods: {
     addTodoItem(todo: string) {
       this.$emit("addTodoItem", todo);

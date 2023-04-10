@@ -1,8 +1,6 @@
 <script>
-
 	import { todoData } from "../store";
 	import TodoItem from "./TodoItem.svelte";
-
 </script>
 
 <div>
